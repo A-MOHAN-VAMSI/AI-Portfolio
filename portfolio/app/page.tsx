@@ -32,6 +32,7 @@ const projects = [
     title: "AI Portfolio Website",
     description:
       "Modern futuristic portfolio built with Next.js, Tailwind, and Framer Motion.",
+    link: "https://github.com/A-MOHAN-VAMSI/AI-Portfolio",
   },
 ];
 
