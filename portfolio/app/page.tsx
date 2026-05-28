@@ -168,9 +168,9 @@ export default function Home() {
       <section className="grid grid-cols-2 md:grid-cols-4 gap-6 px-6 md:px-10 pb-24 relative z-10">
 
   {[
-    ["10+", "Projects"],
-    ["5+", "AI Apps"],
-    ["3+", "Certifications"],
+    ["5+", "Projects"],
+    ["3+", "AI Apps"],
+    ["10+", "Certifications"],
     ["100%", "Passion"],
   ].map(([number, label], index) => (
     <div
