@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
+import Link from "next/link";
 
 const skills = [
   "Python",
@@ -56,10 +57,36 @@ export default function Home() {
         </h1>
 
         <div className="flex gap-6 text-gray-300">
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-        </div>
+
+  <Link
+    href="/about"
+    className="hover:text-cyan-400 transition"
+  >
+    About
+  </Link>
+
+  <a
+    href="#skills"
+    className="hover:text-cyan-400 transition"
+  >
+    Skills
+  </a>
+
+  <a
+    href="#projects"
+    className="hover:text-cyan-400 transition"
+  >
+    Projects
+  </a>
+
+  <Link
+    href="/mail"
+    className="hover:text-cyan-400 transition"
+  >
+    Mail
+  </Link>
+
+</div>
 
       </nav>
 
@@ -274,11 +301,14 @@ export default function Home() {
             Email
           </a>
 
-          <button
-            className="px-6 py-4 rounded-2xl bg-white text-black font-semibold hover:scale-105 transition"
-          >
-            Resume
-          </button>
+          <a
+  href="/resume.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="px-6 py-4 rounded-2xl bg-white text-black font-semibold hover:scale-105 transition"
+>
+  Resume
+</a>
 
         </div>
 
