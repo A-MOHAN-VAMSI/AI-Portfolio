@@ -118,19 +118,19 @@ http://localhost:3000
 
 ### Home Page (Desktop)
 
-![Home Desktop](screenshots/portfolio-home-desktop.png)
+![Home Desktop](portfolio/screenshots/portfolio-home-desktop.png)
 
 ### Home Page (Mobile)
 
-![Home Mobile](screenshots/portfolio-home-mobile.png)
+![Home Mobile](portfolio/screenshots/portfolio-home-mobile.png)
 
 ### Projects Section
 
-![Projects](screenshots/portfolio-projects.png)
+![Projects](portfolio/screenshots/portfolio-projects.png)
 
 ### Contact Page
 
-![Contact](screenshots/portfolio-contact.png)
+![Contact](portfolio/screenshots/portfolio-contact.png)
 
 ## Author
 
