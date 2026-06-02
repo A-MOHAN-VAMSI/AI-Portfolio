@@ -73,8 +73,8 @@ export default function Home() {
         Projects
       </a>
 
-      <Link href="/contact" className="hover:text-cyan-400 transition">
-        Contact
+      <Link href="/mail" className="hover:text-cyan-400 transition">
+        Mail
       </Link>
     </div>
 
