@@ -1,8 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
-import Link from "next/link";
+import Link from "next/link";;
+
 
 const skills = [
   "Python",
@@ -39,6 +41,7 @@ const projects = [
 ];
 
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <main className="min-h-screen bg-black text-white overflow-hidden relative">
 
@@ -50,49 +53,83 @@ export default function Home() {
       <div className="absolute bottom-[-200px] right-[-200px] w-[500px] h-[500px] bg-cyan-500 opacity-20 blur-[120px]" />
 
       {/* Navbar */}
-      <nav className="sticky top-0 backdrop-blur-xl bg-black/30 border-b border-white/10 flex justify-between items-center px-6 md:px-10 py-6 relative z-50">
+      <nav className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+  <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
-        <h1 className="text-2xl font-bold tracking-widest">
-          MOHAN VAMSI
-        </h1>
+    <h1 className="text-lg md:text-2xl font-bold tracking-wider">
+  MOHAN VAMSI
+</h1>
+    {/* Desktop Menu */}
+    <div className="hidden md:flex gap-6 text-gray-300">
+      <Link href="/about" className="hover:text-cyan-400 transition">
+        About
+      </Link>
 
-        <div className="flex gap-6 text-gray-300">
+      <a href="#skills" className="hover:text-cyan-400 transition">
+        Skills
+      </a>
 
-  <Link
-    href="/about"
-    className="hover:text-cyan-400 transition"
-  >
-    About
-  </Link>
+      <a href="#projects" className="hover:text-cyan-400 transition">
+        Projects
+      </a>
 
-  <a
-    href="#skills"
-    className="hover:text-cyan-400 transition"
-  >
-    Skills
-  </a>
+      <Link href="/contact" className="hover:text-cyan-400 transition">
+        Contact
+      </Link>
+    </div>
 
-  <a
-    href="#projects"
-    className="hover:text-cyan-400 transition"
-  >
-    Projects
-  </a>
+    {/* Mobile Menu Button */}
+    <button
+      className="md:hidden text-3xl"
+      onClick={() => setMenuOpen(!menuOpen)}
+    >
+      {menuOpen ? "✕" : "☰"}
+    </button>
+  </div>
 
-  <Link
-    href="/mail"
-    className="hover:text-cyan-400 transition"
-  >
-    Mail
-  </Link>
+  {/* Mobile Menu */}
+  {menuOpen && (
+    <div className="md:hidden bg-zinc-900 border-t border-white/10">
+      <div className="flex flex-col items-center py-4 gap-4">
 
-</div>
+        <Link
+          href="/about"
+          onClick={() => setMenuOpen(false)}
+          className="hover:text-cyan-400"
+        >
+          About
+        </Link>
 
-      </nav>
+        <a
+          href="#skills"
+          onClick={() => setMenuOpen(false)}
+          className="hover:text-cyan-400"
+        >
+          Skills
+        </a>
 
+        <a
+          href="#projects"
+          onClick={() => setMenuOpen(false)}
+          className="hover:text-cyan-400"
+        >
+          Projects
+        </a>
+
+        <Link
+          href="/contact"
+          onClick={() => setMenuOpen(false)}
+          className="hover:text-cyan-400"
+        >
+          Contact
+        </Link>
+
+      </div>
+    </div>
+  )}
+</nav>
       {/* Hero Section */}
-      <section className="flex flex-col justify-center items-center text-center min-h-screen relative z-10 px-6">
-
+<section className="flex flex-col justify-center items-center text-center min-h-[85vh] md:min-h-screen relative z-10 px-6 pt-24 md:pt-0">
   {/* Profile Image */}
   <motion.img
     src="/profile.png"
@@ -100,7 +137,7 @@ export default function Home() {
     initial={{ opacity: 0, scale: 0.8 }}
     animate={{ opacity: 1, scale: 1 }}
     transition={{ duration: 1 }}
-    className="w-40 h-40 rounded-full border-4 border-cyan-400 shadow-[0_0_40px_rgba(34,211,238,0.6)] mb-8 object-cover"
+className="w-28 h-28 md:w-40 md:h-40 rounded-full border-4 border-cyan-400 shadow-[0_0_40px_rgba(34,211,238,0.6)] mb-6 md:mb-8 object-cover"
   />
 
   {/* Name */}
@@ -108,7 +145,7 @@ export default function Home() {
     initial={{ opacity: 0, y: 40 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 1 }}
-    className="text-5xl md:text-7xl font-extrabold mb-4"
+    className="text-4xl md:text-7xl font-extrabold mb-4"
   >
     MOHAN VAMSI
   </motion.h1>
@@ -141,19 +178,18 @@ export default function Home() {
   </motion.p>
 
   {/* Buttons */}
-  <div className="flex gap-4 flex-wrap justify-center">
+  <div className="flex flex-col md:flex-row gap-4 justify-center w-full max-w-md">
 
     <a
       href="#projects"
-      className="px-8 py-4 rounded-2xl bg-cyan-400 text-black font-semibold hover:scale-105 transition"
+      className="w-full md:w-auto px-8 py-4 ..."
     >
       View Projects
     </a>
 
     <a
       href="#contact"
-      className="px-8 py-4 rounded-2xl border border-gray-600 hover:bg-white hover:text-black transition"
-    >
+className="w-full md:w-auto px-8 py-4 ..."    >
       Contact Me
     </a>
 
