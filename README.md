@@ -122,7 +122,7 @@ http://localhost:3000
 
 ### Home Page (Mobile)
 
-![Home Mobile](portfolio/screenshots/portfolio-home-mobile.png)
+![Home Mobile](portfolio/screenshots/portfolio-home-mobile.jpeg)
 
 ### Projects Section
 
